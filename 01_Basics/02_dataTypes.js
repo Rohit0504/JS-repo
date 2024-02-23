@@ -33,17 +33,18 @@ console.log("Hitesh")
 
 
 
-
-//  Primitive
-
-//  7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
+// There are 2 types of datatype in js.
+// 1. Primitive datatype:-
+//     1.String
+//     2. Number
+//     3. Boolean (true / false)
+//     4. null (iska matlab hai empty or zero nahi hai)(standalone value)
+//     5. undefined (aapne variable declare kardiya hai but usmein aap kya value dalenge aapne decide nahi kiya hai)
+//     6. Symbol (kisi bhi value ko unique banane ke liye use kiya jata hai)
+//     7. BigInt (jo badi values hoti hai oo hum BigInt mein use karte hai)
 
 const score = 100
 const scoreValue = 100.3
-
-const isLoggedIn = false
-const outsideTemp = null
-let userEmail;
 
 const id = Symbol('123')
 const anotherId = Symbol('123')
@@ -51,23 +52,11 @@ const anotherId = Symbol('123')
 console.log(id === anotherId); //op=false as symbols are unique.
 
 // const bigNumber = 3456543576654356754n (BigInt)
-let name = "hitesh"
-let age = 18
-let issLoggedIn = false
-let state;
 
-// number => 2 to power 53
-// bigint
-// string => ""
-// boolean => true/false
-// null => standalone value
-// undefined => 
-// symbol => unique
-
-
-// Reference (Non primitive)
-
-// Array, Objects, Functions
+// 2. Reference datatype (Non Primitive datatype)
+//     1. Array ( [ ] )
+//     2. Object ( { } )
+//     3. Function ( function( ){ } )
 
 const heros = ["shaktiman", "naagraj", "doga"];
 let myObj = {
@@ -98,5 +87,32 @@ const myFunction = function(){
 // i)               Object                                object
 // ii)              Array                                 object
 // iii)             Function                              function(object)
+
+
+
+//datatypes are based on memory allocation
+// Primitive datatypes->  call by value (string,number,boolean,null,undefined,BigInt,symbol) ->Stack memory
+// a copy is made and changes are not done in original value. 
+//Example:-
+let valueOne=123
+let valueTwo=valueOne
+valueTwo=456
+
+console.log(valueOne);// op = 123
+console.log(valueTwo);// op = 456
+
+
+// Reference/Non primitive data types -> call by reference ( array,object, function) -> heap memory
+// original value is passed and changes are done on that original value.
+//Example:-
+let userOne={
+    email:"123@g.com",
+    upi:"gpay"
+}
+let userTwo=userOne
+userTwo.email="rohit@g.com"
+
+console.log(userOne.email);// op = rohit@g.com
+console.log(userTwo.email);// op = rohit@g.com
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3  (read this for better understanding.)
